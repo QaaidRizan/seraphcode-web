@@ -1,0 +1,352 @@
+@import "tailwindcss";
+
+/* SeraphCode palette: core + accents + glass + typography */
+:root {
+  --background: #0a0f14;
+  --foreground: #ffffff;
+  --card: #000000;
+  --muted: #1a1a1a;
+  --muted-foreground: #d1d5db;
+  --accent: #00f5d4;
+  --accent-secondary: #a56cff;
+  --accent-tertiary: #6fe7ff;
+  --border: #163040;
+  --glass: #1f2937;
+  --input: #000000;
+  --ring: #00f5d4;
+  --destructive: #ff3366;
+  --on-accent: #0a0f14;
+  --box-shadow-neon: 0 0 5px #00f5d4, 0 0 10px #00f5d440;
+  --box-shadow-neon-sm: 0 0 3px #00f5d4, 0 0 6px #00f5d430;
+  --box-shadow-neon-lg: 0 0 10px #00f5d4, 0 0 20px #00f5d460,
+    0 0 40px #00f5d430;
+  --box-shadow-neon-secondary: 0 0 5px #a56cff, 0 0 20px #a56cff60;
+  --box-shadow-neon-tertiary: 0 0 5px #6fe7ff, 0 0 20px #6fe7ff60;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-tertiary: var(--accent-tertiary);
+  --color-border: var(--border);
+  --color-glass: var(--glass);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-body);
+  --font-heading: var(--font-orbitron);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    position: relative;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body), ui-monospace, monospace;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(
+        ellipse 120% 80% at 10% -20%,
+        rgba(0, 245, 212, 0.07),
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 100% 60% at 90% 110%,
+        rgba(165, 108, 255, 0.06),
+        transparent 45%
+      ),
+      radial-gradient(
+        ellipse 70% 50% at 50% 50%,
+        rgba(111, 231, 255, 0.04),
+        transparent 60%
+      ),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+    opacity: 1;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--accent) 38%, transparent);
+    color: var(--foreground);
+  }
+
+  .font-heading {
+    font-family: var(--font-orbitron), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .font-label {
+    font-family: var(--font-share-tech), ui-monospace, monospace;
+  }
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.32) 2px,
+    rgba(0, 0, 0, 0.32) 4px
+  );
+  opacity: 0.4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after {
+    opacity: 0.22;
+  }
+
+  body::before {
+    background: radial-gradient(
+        ellipse 120% 80% at 10% -20%,
+        rgba(0, 245, 212, 0.05),
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 100% 60% at 90% 110%,
+        rgba(165, 108, 255, 0.04),
+        transparent 45%
+      );
+  }
+
+  .cyber-glitch-animate,
+  .cyber-glitch-rgb {
+    animation: none !important;
+  }
+}
+
+.cyber-surface-raised {
+  background: color-mix(in oklab, var(--card) 42%, var(--background));
+}
+
+.cyber-surface-deep {
+  background: color-mix(in oklab, var(--muted) 22%, var(--background));
+}
+
+.cyber-grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 245, 212, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 212, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.cyber-chamfer {
+  clip-path: polygon(
+    0 12px,
+    12px 0,
+    calc(100% - 12px) 0,
+    100% 12px,
+    100% calc(100% - 12px),
+    calc(100% - 12px) 100%,
+    12px 100%,
+    0 calc(100% - 12px)
+  );
+}
+
+.cyber-chamfer-sm {
+  clip-path: polygon(
+    0 8px,
+    8px 0,
+    calc(100% - 8px) 0,
+    100% 8px,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    8px 100%,
+    0 calc(100% - 8px)
+  );
+}
+
+.cyber-glitch {
+  position: relative;
+  text-shadow:
+    0 0 14px rgba(0, 245, 212, 0.5),
+    -2px 0 #a56cff,
+    2px 0 #6fe7ff;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cyber-glitch-animate {
+    animation: cyber-glitch 4.5s steps(2, end) infinite;
+  }
+
+  .cyber-glitch-rgb {
+    animation: rgb-shift 6s ease-in-out infinite;
+  }
+}
+
+@keyframes cyber-glitch {
+  0%,
+  90%,
+  100% {
+    transform: translate(0);
+  }
+  91% {
+    transform: translate(-2px, 1px) skewX(-0.6deg);
+  }
+  93% {
+    transform: translate(2px, -1px) skewX(0.6deg);
+  }
+  95% {
+    transform: translate(-1px, -1px);
+  }
+}
+
+@keyframes rgb-shift {
+  0%,
+  100% {
+    text-shadow:
+      0 0 14px rgba(0, 245, 212, 0.5),
+      -2px 0 #a56cff,
+      2px 0 #6fe7ff;
+  }
+  50% {
+    text-shadow:
+      0 0 18px rgba(0, 245, 212, 0.45),
+      2px 0 #a56cff,
+      -2px 0 #6fe7ff;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes card-glitch-hover {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-1px, 1px);
+  }
+  40% {
+    transform: translate(1px, -1px);
+  }
+  60% {
+    transform: translate(-1px, 0);
+  }
+}
+
+.terminal-cursor::after {
+  content: "▋";
+  margin-left: 2px;
+  color: var(--accent);
+  animation: blink 1s step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal-cursor::after {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+.cyber-interactive-card {
+  transition:
+    transform 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .group:hover .cyber-interactive-card {
+    animation: card-glitch-hover 0.32s steps(2, end);
+  }
+}
+
+.neon-border {
+  box-shadow: var(--box-shadow-neon-sm);
+}
+
+.neon-border-hover:hover {
+  border-color: var(--accent);
+  box-shadow: var(--box-shadow-neon);
+}
+
+.holographic-panel {
+  position: relative;
+  background: color-mix(in oklab, var(--glass) 45%, transparent);
+  border: 1px solid color-mix(in oklab, var(--border) 85%, var(--accent) 15%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--box-shadow-neon-lg);
+}
+
+.holographic-panel__corner {
+  position: absolute;
+  z-index: 2;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  border-color: color-mix(in oklab, var(--accent-tertiary) 55%, transparent);
+  border-style: solid;
+}
+
+.holographic-panel__corner--tl {
+  left: 10px;
+  top: 10px;
+  border-width: 2px 0 0 2px;
+}
+
+.holographic-panel__corner--tr {
+  right: 10px;
+  top: 10px;
+  border-width: 2px 2px 0 0;
+}
+
+.holographic-panel__corner--br {
+  right: 10px;
+  bottom: 10px;
+  border-width: 0 2px 2px 0;
+}
+
+.holographic-panel__corner--bl {
+  left: 10px;
+  bottom: 10px;
+  border-width: 0 0 2px 2px;
+}
+
+.focus-cyber:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--background),
+    0 0 0 4px var(--ring),
+    var(--box-shadow-neon-sm);
+}
+
+.icon-cyber-glow {
+  transition: filter 150ms ease;
+}
+
+.group:hover .icon-cyber-glow,
+.icon-cyber-glow:hover {
+  filter: drop-shadow(0 0 4px currentColor);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .group:hover .cyber-interactive-card {
+    animation: none;
+  }
+}
