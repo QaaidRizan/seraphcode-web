@@ -3,21 +3,21 @@ import { SectionLabel } from "@/components/shared/SectionLabel";
 
 export function HeroSection() {
   return (
-    <section className="relative -mb-6 overflow-hidden border-b border-border py-20 md:py-28 lg:py-32 cyber-grid-bg z-10">
+    <section className="relative -mb-6 overflow-hidden border-b border-border py-14 md:py-16 lg:py-20 xl:py-24 cyber-grid-bg z-10">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_18%,rgba(0,245,212,0.14),transparent_55%),radial-gradient(ellipse_at_72%_58%,rgba(165,108,255,0.11),transparent_48%),radial-gradient(ellipse_at_50%_100%,rgba(111,231,255,0.07),transparent_55%)]" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
+        <div className="grid items-center gap-8 md:gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
           <div className="-skew-y-1 lg:skew-y-0">
             <SectionLabel text="Development · AI · Enterprise · Cloud" />
-            <h1 className="font-heading cyber-glitch cyber-glitch-animate cyber-glitch-rgb max-w-3xl text-5xl font-black uppercase leading-[1.05] tracking-widest text-foreground md:text-6xl lg:text-7xl xl:text-8xl">
+            <h1 className="font-heading cyber-glitch cyber-glitch-animate cyber-glitch-rgb max-w-3xl text-5xl font-black uppercase leading-[1.05] tracking-widest text-foreground md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
               We Build, Automate &amp; Scale Your Business
             </h1>
-            <p className="terminal-cursor mt-6 max-w-xl text-base leading-relaxed tracking-wide text-muted-foreground md:text-lg">
+            <p className="terminal-cursor mt-4 max-w-xl text-base leading-relaxed tracking-wide text-muted-foreground md:mt-5 md:text-lg lg:mt-4">
               From custom web &amp; mobile apps to AI-powered automation and
               enterprise solutions — we deliver end-to-end technology solutions
               that drive real growth.
             </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <div className="mt-6 flex flex-col gap-4 sm:mt-7 sm:flex-row sm:items-center lg:mt-6">
               <Button variant="glitch" href="/contact">
                 Book a Free Call
               </Button>
@@ -28,7 +28,7 @@ export function HeroSection() {
           </div>
 
           <div className="relative hidden lg:block">
-            <div className="cyber-chamfer holographic-panel relative p-7">
+            <div className="cyber-chamfer holographic-panel relative p-5 lg:p-6">
               <span
                 className="holographic-panel__corner holographic-panel__corner--tl"
                 aria-hidden
