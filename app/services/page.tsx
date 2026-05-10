@@ -6,6 +6,7 @@ import { MobileDevSection } from "@/components/services/MobileDevSection";
 import { AIAutomationSection } from "@/components/services/AIAutomationSection";
 import { CloudSection } from "@/components/services/CloudSection";
 import { CybersecuritySection } from "@/components/services/CybersecuritySection";
+import { SeraphSuiteSection } from "@/components/services/SeraphSuiteSection";
 import { AdditionalServicesSection } from "@/components/services/AdditionalServicesSection";
 import { HowItWorksSection } from "@/components/services/HowItWorksSection";
 import { pageMetadata } from "@/lib/metadata-helpers";
@@ -15,7 +16,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     "Comprehensive software development services in Melbourne, Australia. Custom software, cloud solutions, mobile apps, cybersecurity, data solutions, and digital transformation.",
   keywords:
-    "software development services Melbourne, custom software development, cloud solutions Australia, mobile app development, cybersecurity services, data solutions Melbourne",
+    "software development services Melbourne, custom software development, cloud solutions Australia, mobile app development, cybersecurity services, data solutions Melbourne, SeraphSuite ERP, enterprise resource planning Australia",
   path: "/services",
 });
 
@@ -29,6 +30,7 @@ export default function ServicesPage() {
       <AIAutomationSection />
       <CloudSection />
       <CybersecuritySection />
+      <SeraphSuiteSection />
       <AdditionalServicesSection />
       <HowItWorksSection />
     </>

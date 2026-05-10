@@ -8,6 +8,7 @@ const items = [
   { href: "#ai-automation", label: "AI & Automation" },
   { href: "#cloud-solutions", label: "Cloud Solutions" },
   { href: "#cybersecurity", label: "Cybersecurity" },
+  { href: "#seraphsuite-erp", label: "SeraphSuite ERP" },
 ] as const;
 
 export function ServiceAnchorNav() {

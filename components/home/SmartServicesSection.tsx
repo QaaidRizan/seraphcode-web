@@ -1,4 +1,4 @@
-import { Palette, PenTool, Cloud } from "lucide-react";
+import { Building2, Radio, Cloud } from "lucide-react";
 import { FeatureCard } from "@/components/shared/FeatureCard";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { SectionLabel } from "@/components/shared/SectionLabel";
@@ -15,14 +15,14 @@ export function SmartServicesSection() {
         </p>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <FeatureCard
-            icon={Palette}
-            title="UI/UX Design"
-            description="Beautiful, intuitive interfaces that convert visitors into customers."
+            icon={Building2}
+            title="SeraphSuite ERP"
+            description="Enterprise planning for the entire business finance, inventory, operations, and reporting in one SeraphSuite stack with roles, approvals, and data you can trust."
           />
           <FeatureCard
-            icon={PenTool}
-            title="Branding & Logo"
-            description="Complete brand identity that makes your business unforgettable."
+            icon={Radio}
+            title="IoT & smart tracking"
+            description="Sensors, gateways, and live dashboards track assets, fleets, and sites with alerts you can act on."
           />
           <FeatureCard
             icon={Cloud}
