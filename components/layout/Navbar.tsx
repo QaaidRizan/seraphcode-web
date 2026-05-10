@@ -36,7 +36,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 overflow-visible border-b border-border/80 bg-background/85 backdrop-blur-md">
+    <header className="relative sticky top-0 z-50 overflow-visible border-b border-border/80 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link
           href="/"
@@ -48,6 +48,7 @@ export function Navbar() {
               className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[4.5rem] w-[7.5rem] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(0,245,212,0.4)_0%,rgba(0,245,212,0.12)_48%,transparent_72%)] blur-md"
               aria-hidden
             />
+            {/* right-side logo glow removed */}
             <SiteLogo
               priority
               className="navbar-logo relative z-[1] h-9 w-auto max-w-[10rem] origin-left scale-[1.85] object-contain object-left sm:max-w-[11rem] sm:scale-[2.08] [filter:brightness(0)_invert(1)_brightness(1.15)_contrast(1.1)_saturate(1.25)_drop-shadow(0_0_14px_rgba(0,245,212,0.5))] md:scale-[2.24]"
@@ -71,6 +72,8 @@ export function Navbar() {
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
+
+      {/* right-side header glows removed */}
 
       {open ? (
         <div
