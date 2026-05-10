@@ -7,7 +7,7 @@ export function HeroSection() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_18%,rgba(0,245,212,0.14),transparent_55%),radial-gradient(ellipse_at_72%_58%,rgba(165,108,255,0.11),transparent_48%),radial-gradient(ellipse_at_50%_100%,rgba(111,231,255,0.07),transparent_55%)]" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-8 md:gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
-          <div className="-skew-y-1 lg:skew-y-0">
+          <div className="lg:skew-y-0">
             <SectionLabel text="Development · AI · Enterprise · Cloud" />
             <h1 className="font-heading cyber-glitch cyber-glitch-animate cyber-glitch-rgb max-w-3xl text-5xl font-black uppercase leading-[1.05] tracking-widest text-foreground md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
               We Build, Automate &amp; Scale Your Business

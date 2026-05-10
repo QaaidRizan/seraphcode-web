@@ -10,8 +10,8 @@ export function WhatWeDoSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionLabel text="WHAT WE DO" />
         <SectionHeading text="Full Spectrum Technology Solutions" />
-        <div className="-skew-y-1 md:skew-y-0">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 md:skew-y-1 lg:skew-y-0">
+        <div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <FeatureCard
               icon={Globe}
               title="Web Development"
