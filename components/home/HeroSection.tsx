@@ -3,7 +3,7 @@ import { SectionLabel } from "@/components/shared/SectionLabel";
 
 export function HeroSection() {
   return (
-    <section className="relative -mb-6 overflow-hidden border-b border-border py-14 md:py-16 lg:py-20 xl:py-24 cyber-grid-bg z-10">
+    <section className="home-hero relative -mb-6 overflow-hidden border-b border-border cyber-grid-bg z-10">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_18%,rgba(0,245,212,0.14),transparent_55%),radial-gradient(ellipse_at_72%_58%,rgba(165,108,255,0.11),transparent_48%),radial-gradient(ellipse_at_50%_100%,rgba(111,231,255,0.07),transparent_55%)]" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-8 md:gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">

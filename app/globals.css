@@ -350,3 +350,32 @@ body::after {
     animation: none;
   }
 }
+
+/* Home hero: last in utilities layer so padding wins; `section.home-hero` beats single-class utilities. */
+@layer utilities {
+  section.home-hero {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  @media (min-width: 768px) {
+    section.home-hero {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    section.home-hero {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    section.home-hero {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+}
