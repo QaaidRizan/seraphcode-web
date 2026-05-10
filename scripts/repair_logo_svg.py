@@ -1,6 +1,6 @@
 import pathlib
 
-p = pathlib.Path(r"d:/aug repo/seraphcode-web/assert/sc_logo.svg")
+p = pathlib.Path(r"d:/aug repo/seraphcode-web/public/assets/sc_logo.svg")
 s = p.read_text(encoding="utf-8")
 old = 'meet"/></g></g></g>\n</g>\n<g id="hud-frame"'
 new = 'meet"/></g></g>\n</g>\n<g id="hud-frame"'

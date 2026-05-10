@@ -1,4 +1,4 @@
-s = open(r"d:\aug repo\seraphcode-web\assert\sc_logo.svg", encoding="utf-8").read()
+s = open(r"d:\aug repo\seraphcode-web\public\assets\sc_logo.svg", encoding="utf-8").read()
 needle = "<g id=\"logo-mark\">"
 i = s.find(needle)
 print("logo-mark idx", i)

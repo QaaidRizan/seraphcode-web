@@ -1,6 +1,6 @@
 import pathlib
 
-p = pathlib.Path(__file__).resolve().parents[1] / "assert" / "sc_logo.svg"
+p = pathlib.Path(__file__).resolve().parents[1] / "public" / "assets" / "sc_logo.svg"
 s = p.read_text(encoding="utf-8")
 needle = '</g></g></g>\n<g id="hud-frame"'
 if needle in s:

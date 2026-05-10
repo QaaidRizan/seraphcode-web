@@ -1,5 +1,5 @@
-/** SVG from `assert/sc_logo.svg` — use <img> so filters / complex SVG work; Next/Image often breaks these. */
-const LOGO_SRC = "/assert/sc_logo.svg";
+/** Served from `public/assets/sc_logo.svg` — use <img> so filters / embedded raster work; Next/Image often breaks these. */
+const LOGO_SRC = "/assets/sc_logo.svg";
 
 export function SiteLogo({
   className = "",
@@ -14,8 +14,8 @@ export function SiteLogo({
     <img
       src={LOGO_SRC}
       alt="SeraphCode"
-      width={375}
-      height={375}
+      width={140}
+      height={140}
       decoding={priority ? "sync" : "async"}
       fetchPriority={priority ? "high" : "auto"}
       className={className}

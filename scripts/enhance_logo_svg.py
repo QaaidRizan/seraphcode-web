@@ -1,9 +1,9 @@
-"""One-off: enhance assert/sc_logo.svg for dark navbar visibility."""
+"""One-off: enhance public/assets/sc_logo.svg for dark navbar visibility."""
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SRC = ROOT / "assert" / "sc_logo.svg"
+SRC = ROOT / "public" / "assets" / "sc_logo.svg"
 OUT = SRC  # overwrite in place
 
 PAD = 85  # padding around original 375×375 art for viewBox expansion

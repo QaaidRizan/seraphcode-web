@@ -1,7 +1,7 @@
 import pathlib
 import re
 
-s = pathlib.Path(r"d:/aug repo/seraphcode-web/assert/sc_logo.svg").read_text(encoding="utf-8")
+s = pathlib.Path(r"d:/aug repo/seraphcode-web/public/assets/sc_logo.svg").read_text(encoding="utf-8")
 # From logo-mark to hud
 a = s.find('<g id="logo-mark">') + len('<g id="logo-mark">')
 b = s.find('<g id="hud-frame"')

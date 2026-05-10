@@ -16,7 +16,7 @@ export function FlagshipProductSection() {
         <p className="mb-12 max-w-3xl text-base leading-relaxed tracking-wide text-muted-foreground md:text-lg">
           A comprehensive logistics and contractor management solution built
           for Australian delivery operations. Developed in close collaboration
-          with Australia Post, PostieMate streamlines contractor management,
+          with Australia Post contractors, PostieMate streamlines contractor management,
           route optimization, and compliance tracking while ensuring all data
           is stored securely in Australia.
         </p>

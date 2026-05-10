@@ -43,12 +43,12 @@ export function Footer() {
               className="relative inline-block overflow-visible rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
               {/* Match header: layout box stays compact; visual size from scale */}
-              <span className="relative inline-flex h-9 items-center overflow-visible sm:h-10">
+              <span className="relative inline-flex h-10 items-center overflow-visible sm:h-11">
                 <span
-                  className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-20 w-44 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(0,245,212,0.32)_0%,rgba(0,245,212,0.08)_45%,transparent_72%)] blur-lg"
+                  className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[5.5rem] w-48 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(0,245,212,0.32)_0%,rgba(0,245,212,0.08)_45%,transparent_72%)] blur-lg"
                   aria-hidden
                 />
-                <SiteLogo className="relative z-[1] h-9 w-auto max-w-[10rem] origin-left scale-[1.55] object-contain object-left sm:h-10 sm:max-w-[11rem] sm:scale-[1.72] [filter:brightness(1.15)_contrast(1.1)_saturate(1.25)] drop-shadow-[0_0_16px_rgba(0,245,212,0.45)] md:scale-[1.9]"
+                <SiteLogo className="navbar-logo relative z-[1] h-10 w-auto max-w-[11rem] origin-left scale-[1.68] object-contain object-left sm:h-11 sm:max-w-[12rem] sm:scale-[1.86] [filter:brightness(0)_invert(1)_brightness(1.15)_contrast(1.1)_saturate(1.25)_drop-shadow(0_0_16px_rgba(0,245,212,0.45))] md:scale-[2.05]"
                 />
               </span>
             </Link>

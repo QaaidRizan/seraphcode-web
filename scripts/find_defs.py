@@ -1,6 +1,6 @@
 import pathlib
 
-s = pathlib.Path(r"d:/aug repo/seraphcode-web/assert/sc_logo.svg").read_text(encoding="utf-8")
+s = pathlib.Path(r"d:/aug repo/seraphcode-web/public/assets/sc_logo.svg").read_text(encoding="utf-8")
 idx = 0
 while True:
     i = s.find("</defs>", idx)

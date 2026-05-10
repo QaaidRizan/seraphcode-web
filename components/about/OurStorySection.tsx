@@ -27,7 +27,7 @@ export function OurStorySection() {
               PostieMate
             </Link>
             , is a specialized solution designed for contractors, developed in
-            close collaboration with Australia Post to streamline operations and
+            close collaboration with Australia Post contractors, to streamline operations and
             enhance efficiency.
           </p>
           <p>

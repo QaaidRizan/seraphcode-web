@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/shared/Button";
 import { SiteLogo } from "@/components/layout/SiteLogo";
 
 const links = [
@@ -43,15 +42,15 @@ export function Navbar() {
           href="/"
           className="relative flex items-center gap-2 overflow-visible rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
-          {/* Fixed layout height (h-8); scale enlarges only the drawn SVG without growing the bar */}
-          <span className="relative inline-flex h-8 shrink-0 items-center overflow-visible">
+          {/* Fixed layout height; scale enlarges only the drawn SVG without growing the bar much */}
+          <span className="relative inline-flex h-9 shrink-0 items-center overflow-visible">
             <span
-              className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-16 w-28 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(0,245,212,0.4)_0%,rgba(0,245,212,0.12)_48%,transparent_72%)] blur-md"
+              className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[4.5rem] w-[7.5rem] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(0,245,212,0.4)_0%,rgba(0,245,212,0.12)_48%,transparent_72%)] blur-md"
               aria-hidden
             />
             <SiteLogo
               priority
-              className="relative z-[1] h-8 w-auto max-w-[9rem] origin-left scale-[1.72] object-contain object-left sm:max-w-[10rem] sm:scale-[1.95] [filter:brightness(1.15)_contrast(1.1)_saturate(1.25)] drop-shadow-[0_0_14px_rgba(0,245,212,0.5)] md:scale-[2.1]"
+              className="navbar-logo relative z-[1] h-9 w-auto max-w-[10rem] origin-left scale-[1.85] object-contain object-left sm:max-w-[11rem] sm:scale-[2.08] [filter:brightness(0)_invert(1)_brightness(1.15)_contrast(1.1)_saturate(1.25)_drop-shadow(0_0_14px_rgba(0,245,212,0.5))] md:scale-[2.24]"
             />
           </span>
         </Link>
@@ -61,12 +60,6 @@ export function Navbar() {
             <NavLink key={l.href} href={l.href} label={l.label} />
           ))}
         </nav>
-
-        <div className="hidden lg:block">
-          <Button variant="muted" href="/login" className="!px-4 !py-2 !text-[11px]">
-            Staff Login
-          </Button>
-        </div>
 
         <button
           type="button"
@@ -88,9 +81,6 @@ export function Navbar() {
             {links.map((l) => (
               <NavLink key={l.href} href={l.href} label={l.label} />
             ))}
-            <Button variant="muted" href="/login" className="w-full">
-              Staff Login
-            </Button>
           </div>
         </div>
       ) : null}
