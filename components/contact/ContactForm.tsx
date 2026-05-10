@@ -1,7 +1,7 @@
 "use client";
 
-import { useActionState } from "react";
-import { submitContact } from "@/app/contact/actions";
+import { useState, type FormEvent } from "react";
+import { SITE } from "@/lib/constants";
 
 const services = [
   "Web Development",
@@ -12,11 +12,90 @@ const services = [
   "Other / Not Sure",
 ];
 
+function contactRecipientList(): string[] {
+  const raw = process.env.NEXT_PUBLIC_CONTACT_TO_EMAIL?.trim();
+  if (raw) {
+    return [...new Set(raw.split(/[,;]+/).map((a) => a.trim()).filter(Boolean))];
+  }
+  return [SITE.email];
+}
+
+function buildMailBody(fields: {
+  name: string;
+  email: string;
+  company: string;
+  phone: string;
+  service: string;
+  message: string;
+}): string {
+  return [
+    `Name: ${fields.name}`,
+    `Email: ${fields.email}`,
+    fields.company ? `Company: ${fields.company}` : null,
+    fields.phone ? `Phone: ${fields.phone}` : null,
+    fields.service ? `Service: ${fields.service}` : null,
+    "",
+    fields.message,
+  ]
+    .filter((line) => line !== null)
+    .join("\n");
+}
+
 export function ContactForm() {
-  const [state, formAction, pending] = useActionState(submitContact, {
-    ok: false,
-    message: "",
-  });
+  const [status, setStatus] = useState<{ ok: boolean; message: string } | null>(
+    null,
+  );
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+
+    const name = String(fd.get("name") ?? "").trim();
+    const email = String(fd.get("email") ?? "").trim();
+    const company = String(fd.get("company") ?? "").trim();
+    const phone = String(fd.get("phone") ?? "").trim();
+    const service = String(fd.get("service") ?? "").trim();
+    const message = String(fd.get("message") ?? "").trim();
+
+    if (!name || !email || !message) {
+      setStatus({
+        ok: false,
+        message: "Please fill in all required fields.",
+      });
+      return;
+    }
+
+    setStatus(null);
+
+    const to = contactRecipientList().join(",");
+    const subject = `Website contact: ${name}`;
+    const body = buildMailBody({
+      name,
+      email,
+      company,
+      phone,
+      service,
+      message,
+    });
+
+    const params = new URLSearchParams({
+      view: "cm",
+      fs: "1",
+      to,
+      su: subject,
+      body,
+    });
+
+    const url = `https://mail.google.com/mail/?${params.toString()}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+
+    setStatus({
+      ok: true,
+      message:
+        "Gmail should open in a new tab with your message ready to send. If nothing opened, check your popup blocker.",
+    });
+  }
 
   return (
     <section className="cyber-surface-deep border-t border-border py-16 md:py-20">
@@ -24,7 +103,7 @@ export function ContactForm() {
         <h2 className="font-heading text-2xl font-bold uppercase tracking-wide text-foreground md:text-3xl">
           Send us a message
         </h2>
-        <form action={formAction} className="mt-8 space-y-5">
+        <form onSubmit={handleSubmit} className="mt-8 space-y-5">
           <div>
             <label
               htmlFor="name"
@@ -129,23 +208,22 @@ export function ContactForm() {
             />
           </div>
 
-          {state?.message ? (
+          {status?.message ? (
             <p
               className={
-                state.ok ? "text-accent" : "text-destructive"
+                status.ok ? "text-accent" : "text-destructive"
               }
               role="status"
             >
-              {state.message}
+              {status.message}
             </p>
           ) : null}
 
           <button
             type="submit"
-            disabled={pending}
             className="cyber-chamfer-sm inline-flex min-h-11 items-center justify-center border-2 border-accent bg-accent px-8 py-2.5 font-mono text-sm font-semibold uppercase tracking-[0.15em] text-[var(--on-accent)] shadow-[var(--box-shadow-neon-sm)] transition hover:brightness-110 disabled:opacity-60 focus-cyber"
           >
-            {pending ? "Sending…" : "Send Message"}
+            Open in Gmail
           </button>
         </form>
       </div>

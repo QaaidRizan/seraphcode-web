@@ -3,6 +3,7 @@ import { AboutHero } from "@/components/about/AboutHero";
 import { OurStorySection } from "@/components/about/OurStorySection";
 import { WhatWeDoAbout } from "@/components/about/WhatWeDoAbout";
 import { OurValuesSection } from "@/components/about/OurValuesSection";
+import { EnterpriseSecuritySection } from "@/components/about/EnterpriseSecuritySection";
 import { pageMetadata } from "@/lib/metadata-helpers";
 
 export const metadata: Metadata = pageMetadata({
@@ -20,6 +21,7 @@ export default function AboutPage() {
       <AboutHero />
       <OurStorySection />
       <WhatWeDoAbout />
+      <EnterpriseSecuritySection />
       <OurValuesSection />
     </>
   );
