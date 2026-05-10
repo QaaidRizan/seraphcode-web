@@ -3,14 +3,14 @@ import { SectionLabel } from "@/components/shared/SectionLabel";
 
 const cards = [
   {
-    title: "UI/UX Design Services",
+    title: "SeraphSuite ERP",
     description:
-      "Stunning, user-centric interfaces designed to maximize engagement and conversion rates.",
+      "Enterprise resource planning for the entire enterprise—finance, inventory, operations, and reporting in one SeraphSuite stack with roles, approvals, and data you can trust.",
   },
   {
-    title: "Branding & Logo Design",
+    title: "IoT & smart tracking",
     description:
-      "Complete brand identity packages including logos, color systems, typography, and brand guidelines.",
+      "Connected devices, gateways, and live dashboards for asset and fleet visibility—telemetry, geolocation, and alerts tailored to your operations.",
   },
   {
     title: "Cloud Deployment",

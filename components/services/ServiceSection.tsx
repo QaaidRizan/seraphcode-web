@@ -9,6 +9,7 @@ export function ServiceSection({
   subtext,
   items,
   badge,
+  sectionClassName = "",
 }: {
   id: string;
   label: string;
@@ -16,9 +17,16 @@ export function ServiceSection({
   subtext: string;
   items: { title: string; description: string }[];
   badge?: string;
+  /** e.g. cyber-surface-deep border-y border-border */
+  sectionClassName?: string;
 }) {
   return (
-    <section id={id} className="scroll-mt-28 py-20 md:py-24">
+    <section
+      id={id}
+      className={["scroll-mt-28 py-20 md:py-24", sectionClassName]
+        .filter(Boolean)
+        .join(" ")}
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionLabel text={label} />
         <SectionHeading text={heading} />
