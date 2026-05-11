@@ -35,7 +35,7 @@ export function CloudSection() {
         <div className="grid items-start gap-10 lg:grid-cols-2">
           <div className="cyber-chamfer order-2 overflow-hidden border border-border lg:order-1">
             <Image
-              src="/assets/1213.jpg"
+              src="/assets/images/cloude.jpg"
               alt=""
               width={900}
               height={700}

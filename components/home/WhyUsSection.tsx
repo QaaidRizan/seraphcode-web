@@ -24,7 +24,7 @@ export function WhyUsSection() {
         <div className="grid items-start gap-10 lg:grid-cols-2">
           <div className="cyber-chamfer relative order-2 overflow-hidden border border-border shadow-[var(--box-shadow-neon-sm)] lg:order-1">
             <Image
-              src="/assets/1213.jpg"
+              src="/assets/images/whyseraphcode.jpg"
               alt=""
               width={900}
               height={700}

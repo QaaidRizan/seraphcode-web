@@ -27,7 +27,7 @@ export function WhatWeDoSection() {
             <FeatureCard
               icon={Bot}
               title="AI & Automation"
-              description="AI chatbots, workflow automation, CRM systems, and intelligent lead generation engines."
+              description="AI chatbots, workflow automation, CRM systems, intelligent lead generation, and compliance process automation."
               href="/services"
             />
           </div>

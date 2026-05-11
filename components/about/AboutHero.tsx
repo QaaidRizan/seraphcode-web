@@ -24,7 +24,7 @@ export function AboutHero() {
         </div>
         <div className="cyber-chamfer overflow-hidden border border-border shadow-[var(--box-shadow-neon-sm)]">
           <Image
-            src="/assets/1213.jpg"
+            src="/assets/images/aboutseraphcode.jpg"
             alt=""
             width={900}
             height={640}

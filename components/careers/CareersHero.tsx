@@ -23,7 +23,7 @@ export function CareersHero() {
         </div>
         <div className="cyber-chamfer overflow-hidden border border-border">
           <Image
-            src="/assets/1213.jpg"
+            src="/assets/images/carear.jpg"
             alt=""
             width={900}
             height={560}

@@ -48,7 +48,7 @@ export function SaaSSection() {
           </div>
           <div className="cyber-chamfer relative overflow-hidden border border-border shadow-[var(--box-shadow-neon-sm)]">
             <Image
-              src="/assets/1213.jpg"
+              src="/assets/images/saas.jpg"
               alt=""
               width={900}
               height={700}

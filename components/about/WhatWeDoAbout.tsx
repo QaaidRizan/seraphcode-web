@@ -40,7 +40,7 @@ export function WhatWeDoAbout() {
           </div>
           <div className="cyber-chamfer overflow-hidden border border-border">
             <Image
-              src="/assets/1213.jpg"
+              src="/assets/images/whatwedo.jpg"
               alt=""
               width={900}
               height={700}
