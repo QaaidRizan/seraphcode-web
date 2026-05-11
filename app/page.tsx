@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/metadata-helpers";
 
 export const metadata: Metadata = pageMetadata({
   title:
-    "Custom Software Development Melbourne, Mobile Apps and Enterprise Solutions by SeraphCode",
+    "Seraph Code",
   description:
     "Leading custom software development company in Melbourne, Australia. Specializing in mobile apps, enterprise solutions, AI development, and cloud services. Australian-owned, compliance-first.",
   keywords:
