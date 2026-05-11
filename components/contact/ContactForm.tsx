@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { SITE } from "@/lib/constants";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 const services = [
   "Web Development",
@@ -12,41 +13,13 @@ const services = [
   "Other / Not Sure",
 ];
 
-function contactRecipientList(): string[] {
-  const raw = process.env.NEXT_PUBLIC_CONTACT_TO_EMAIL?.trim();
-  if (raw) {
-    return [...new Set(raw.split(/[,;]+/).map((a) => a.trim()).filter(Boolean))];
-  }
-  return [SITE.email];
-}
-
-function buildMailBody(fields: {
-  name: string;
-  email: string;
-  company: string;
-  phone: string;
-  service: string;
-  message: string;
-}): string {
-  return [
-    `Name: ${fields.name}`,
-    `Email: ${fields.email}`,
-    fields.company ? `Company: ${fields.company}` : null,
-    fields.phone ? `Phone: ${fields.phone}` : null,
-    fields.service ? `Service: ${fields.service}` : null,
-    "",
-    fields.message,
-  ]
-    .filter((line) => line !== null)
-    .join("\n");
-}
-
 export function ContactForm() {
   const [status, setStatus] = useState<{ ok: boolean; message: string } | null>(
     null,
   );
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const fd = new FormData(form);
@@ -66,35 +39,35 @@ export function ContactForm() {
       return;
     }
 
+    setIsSubmitting(true);
     setStatus(null);
 
-    const to = contactRecipientList().join(",");
-    const subject = `Website contact: ${name}`;
-    const body = buildMailBody({
-      name,
-      email,
-      company,
-      phone,
-      service,
-      message,
-    });
+    try {
+      await addDoc(collection(db, "Enquiries"), {
+        name,
+        email,
+        company,
+        phone,
+        service,
+        message,
+        createdAt: serverTimestamp(),
+        status: "new",
+      });
 
-    const params = new URLSearchParams({
-      view: "cm",
-      fs: "1",
-      to,
-      su: subject,
-      body,
-    });
-
-    const url = `https://mail.google.com/mail/?${params.toString()}`;
-    window.open(url, "_blank", "noopener,noreferrer");
-
-    setStatus({
-      ok: true,
-      message:
-        "Gmail should open in a new tab with your message ready to send. If nothing opened, check your popup blocker.",
-    });
+      setStatus({
+        ok: true,
+        message: "Your message has been received. We'll be in touch soon!",
+      });
+      form.reset();
+    } catch (error) {
+      console.error("Error submitting form: ", error);
+      setStatus({
+        ok: false,
+        message: "Something went wrong. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -221,9 +194,10 @@ export function ContactForm() {
 
           <button
             type="submit"
+            disabled={isSubmitting}
             className="cyber-chamfer-sm inline-flex min-h-11 items-center justify-center border-2 border-accent bg-accent px-8 py-2.5 font-mono text-sm font-semibold uppercase tracking-[0.15em] text-[var(--on-accent)] shadow-[var(--box-shadow-neon-sm)] transition hover:brightness-110 disabled:opacity-60 focus-cyber"
           >
-            Open in Gmail
+            {isSubmitting ? "Sending..." : "Send Message"}
           </button>
         </form>
       </div>
