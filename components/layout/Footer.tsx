@@ -42,13 +42,14 @@ export function Footer() {
               href="/"
               className="relative inline-block overflow-visible rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
-              {/* Match header: layout box stays compact; visual size from scale */}
-              <span className="relative inline-flex h-10 items-center overflow-visible sm:h-11">
+              {/* Same as header: no CSS scale — crisp on Safari / mobile Retina */}
+              <span className="relative inline-flex h-[calc(2.5rem*1.68)] items-center overflow-visible sm:h-[calc(2.75rem*1.86)] md:h-[calc(2.75rem*2.05)]">
                 <span
-                  className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[5.5rem] w-48 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(0,245,212,0.32)_0%,rgba(0,245,212,0.08)_45%,transparent_72%)] blur-lg"
+                  className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[6.5rem] w-[13rem] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(0,245,212,0.32)_0%,rgba(0,245,212,0.08)_45%,transparent_72%)] blur-lg"
                   aria-hidden
                 />
-                <SiteLogo className="navbar-logo relative z-[1] h-10 w-auto max-w-[11rem] origin-left scale-[1.68] object-contain object-left sm:h-11 sm:max-w-[12rem] sm:scale-[1.86] [filter:brightness(0)_invert(1)_brightness(1.15)_contrast(1.1)_saturate(1.25)_drop-shadow(0_0_16px_rgba(0,245,212,0.45))] md:scale-[2.05]"
+                <SiteLogo
+                  className="navbar-logo relative z-[1] h-[calc(2.5rem*1.68)] w-auto max-w-[11rem] object-contain object-left [filter:brightness(0)_invert(1)_brightness(1.15)_contrast(1.1)_saturate(1.25)_drop-shadow(0_0_16px_rgba(0,245,212,0.45))] [translate:0_0_1px] sm:h-[calc(2.75rem*1.86)] sm:max-w-[12rem] md:h-[calc(2.75rem*2.05)]"
                 />
               </span>
             </Link>
