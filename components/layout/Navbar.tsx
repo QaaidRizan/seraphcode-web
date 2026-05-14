@@ -37,25 +37,18 @@ export function Navbar() {
 
   return (
     <header className="relative sticky top-0 z-50 overflow-visible border-b border-[color:var(--border-soft)] bg-[color:var(--surface-header)] backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-1 sm:px-6 sm:py-2 lg:px-8 lg:py-0.5">
+      <div className="mx-auto flex h-14 max-h-14 w-full max-w-7xl items-center justify-between gap-3 overflow-hidden px-4 sm:h-16 sm:max-h-16 sm:px-6 lg:gap-4 lg:px-8">
         <Link
           href="/"
-          className="relative flex min-h-[4.75rem] min-w-0 shrink items-center gap-2 overflow-visible rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:min-h-0"
+          className="relative flex h-[34px] max-h-[34px] shrink-0 items-center overflow-hidden rounded-sm bg-white px-1.5 shadow-sm ring-1 ring-[rgba(0,0,0,0.08)] outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--surface-header)] md:h-10 md:max-h-10"
         >
-          {/* Mobile/tablet: tall wordmark. Desktop (lg+): still prominent but fits beside horizontal nav */}
-          <span className="relative inline-flex h-[4.75rem] shrink-0 items-center overflow-visible sm:h-[5.75rem] md:h-[6.75rem] lg:h-[5.5rem]">
-            <span
-              className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-44 w-64 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(0,245,212,0.45)_0%,rgba(0,245,212,0.14)_50%,transparent_75%)] blur-md sm:h-48 sm:w-[17rem] md:h-56 md:w-80 lg:h-52 lg:w-60"
-              aria-hidden
-            />
-            <SiteLogo
-              priority
-              className="navbar-logo relative z-[1] h-[4.75rem] w-auto max-w-[min(100%,21rem)] object-contain object-left [filter:brightness(0)_invert(1)_brightness(1.18)_contrast(1.12)_saturate(1.28)_drop-shadow(0_0_14px_rgba(0,245,212,0.55))] [translate:0_0_1px] sm:h-[5.75rem] sm:max-w-[23rem] md:h-[6.75rem] md:max-w-[26rem] lg:h-[5.5rem] lg:max-w-[min(100%,28rem)]"
-            />
-          </span>
+          <SiteLogo
+            priority
+            className="navbar-logo relative z-[1] h-full w-auto max-h-full max-w-[9rem] object-contain object-left sm:max-w-[10rem] md:max-w-[11rem]"
+          />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
           {links.map((l) => (
             <NavLink key={l.href} href={l.href} label={l.label} />
           ))}
@@ -63,7 +56,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex size-8 shrink-0 items-center justify-center border border-border text-foreground lg:hidden focus-cyber"
+          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-[color:var(--border-accent-faint)] bg-[rgba(0,245,212,0.06)] text-foreground transition-colors hover:bg-[rgba(0,245,212,0.12)] lg:hidden focus-cyber"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
@@ -79,7 +72,7 @@ export function Navbar() {
           id="mobile-nav"
           className="border-t border-border bg-background px-4 py-3 lg:hidden"
         >
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3">
             {links.map((l) => (
               <NavLink key={l.href} href={l.href} label={l.label} />
             ))}
