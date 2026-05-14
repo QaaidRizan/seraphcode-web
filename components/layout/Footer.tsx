@@ -41,7 +41,7 @@ export function Footer() {
             <Link
               href="/"
               className="relative inline-flex items-center overflow-visible rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-              aria-label="SeraphCode — Home"
+              aria-label="SeraphCode  Home"
             >
               <BrandLogoHomeLockup />
             </Link>
