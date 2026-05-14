@@ -43,7 +43,7 @@ export function Navbar() {
           className="relative flex items-center gap-2 overflow-visible rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           aria-label="SeraphCode — Home"
         >
-          <BrandLogoHomeLockup priority />
+          <BrandLogoHomeLockup priority spotlight="white" />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
