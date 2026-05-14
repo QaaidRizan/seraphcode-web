@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Share2 } from "lucide-react";
-import { SiteLogo } from "@/components/layout/SiteLogo";
+import { BrandLogoHomeLockup } from "@/components/layout/BrandLogoHomeLockup";
 import { FOOTER_TAGLINE, SITE } from "@/lib/constants";
 
 const columns = [
@@ -40,11 +40,10 @@ export function Footer() {
           <div>
             <Link
               href="/"
-              className="relative inline-block overflow-hidden rounded-sm bg-white px-2 py-1.5 shadow-sm ring-1 ring-[rgba(0,0,0,0.08)] outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="relative inline-flex items-center overflow-visible rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              aria-label="SeraphCode — Home"
             >
-              <span className="relative inline-flex h-[calc(2.5rem*1.68)] items-center sm:h-[calc(2.75rem*1.86)] md:h-[calc(2.75rem*2.05)]">
-                <SiteLogo className="navbar-logo relative z-[1] h-full max-h-full w-auto max-w-[11rem] object-contain object-left sm:max-w-[12rem] md:max-w-[13rem]" />
-              </span>
+              <BrandLogoHomeLockup />
             </Link>
             <p className="mt-4 max-w-md text-sm leading-relaxed tracking-wide text-muted-foreground">
               {FOOTER_TAGLINE}

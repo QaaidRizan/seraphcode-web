@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { SiteLogo } from "@/components/layout/SiteLogo";
+import { BrandLogoHomeLockup } from "@/components/layout/BrandLogoHomeLockup";
 
 const links = [
   { href: "/", label: "Home" },
@@ -41,19 +41,9 @@ export function Navbar() {
         <Link
           href="/"
           className="relative flex items-center gap-2 overflow-visible rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          aria-label="SeraphCode — Home"
         >
-          {/* Fixed layout height; scale enlarges only the drawn SVG without growing the bar much */}
-          <span className="relative inline-flex h-9 shrink-0 items-center overflow-visible">
-            <span
-              className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[4.5rem] w-[7.5rem] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(0,245,212,0.4)_0%,rgba(0,245,212,0.12)_48%,transparent_72%)] blur-md"
-              aria-hidden
-            />
-            {/* right-side logo glow removed */}
-            <SiteLogo
-              priority
-              className="navbar-logo relative z-[1] h-9 w-auto max-w-[10rem] origin-left scale-[1.85] object-contain object-left sm:max-w-[11rem] sm:scale-[2.08] [filter:brightness(0)_invert(1)_brightness(1.15)_contrast(1.1)_saturate(1.25)_drop-shadow(0_0_14px_rgba(0,245,212,0.5))] md:scale-[2.24]"
-            />
-          </span>
+          <BrandLogoHomeLockup priority />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
@@ -72,8 +62,6 @@ export function Navbar() {
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
-
-      {/* right-side header glows removed */}
 
       {open ? (
         <div
