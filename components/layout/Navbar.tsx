@@ -37,20 +37,20 @@ export function Navbar() {
 
   return (
     <header className="relative sticky top-0 z-50 overflow-visible border-b border-[color:var(--border-soft)] bg-[color:var(--surface-header)] backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-1 sm:px-6 sm:py-2 lg:px-8 lg:py-0.5">
         <Link
           href="/"
-          className="relative flex items-center gap-2 overflow-visible rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="relative flex min-h-[4.75rem] min-w-0 shrink items-center gap-2 overflow-visible rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background lg:min-h-0"
         >
-          {/* Final height matches old h-9 × scale — avoids Safari blur from scale()+filter on the logo */}
-          <span className="relative inline-flex h-[calc(2.25rem*1.85)] shrink-0 items-center overflow-visible sm:h-[calc(2.25rem*2.08)] md:h-[calc(2.25rem*2.24)]">
+          {/* Mobile/tablet: tall wordmark. Desktop (lg+): still prominent but fits beside horizontal nav */}
+          <span className="relative inline-flex h-[4.75rem] shrink-0 items-center overflow-visible sm:h-[5.75rem] md:h-[6.75rem] lg:h-[5.5rem]">
             <span
-              className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[6.25rem] w-[9rem] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(0,245,212,0.4)_0%,rgba(0,245,212,0.12)_48%,transparent_72%)] blur-md"
+              className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-44 w-64 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(0,245,212,0.45)_0%,rgba(0,245,212,0.14)_50%,transparent_75%)] blur-md sm:h-48 sm:w-[17rem] md:h-56 md:w-80 lg:h-52 lg:w-60"
               aria-hidden
             />
             <SiteLogo
               priority
-              className="navbar-logo relative z-[1] h-[calc(2.25rem*1.85)] w-auto max-w-[10rem] object-contain object-left [filter:brightness(0)_invert(1)_brightness(1.15)_contrast(1.1)_saturate(1.25)_drop-shadow(0_0_14px_rgba(0,245,212,0.5))] [translate:0_0_1px] sm:max-w-[11rem] sm:h-[calc(2.25rem*2.08)] md:h-[calc(2.25rem*2.24)]"
+              className="navbar-logo relative z-[1] h-[4.75rem] w-auto max-w-[min(100%,21rem)] object-contain object-left [filter:brightness(0)_invert(1)_brightness(1.18)_contrast(1.12)_saturate(1.28)_drop-shadow(0_0_14px_rgba(0,245,212,0.55))] [translate:0_0_1px] sm:h-[5.75rem] sm:max-w-[23rem] md:h-[6.75rem] md:max-w-[26rem] lg:h-[5.5rem] lg:max-w-[min(100%,28rem)]"
             />
           </span>
         </Link>
@@ -63,12 +63,12 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex min-h-11 min-w-11 items-center justify-center border border-border text-foreground lg:hidden focus-cyber"
+          className="inline-flex size-8 shrink-0 items-center justify-center border border-border text-foreground lg:hidden focus-cyber"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {open ? <X className="h-4 w-4" strokeWidth={2.25} /> : <Menu className="h-4 w-4" strokeWidth={2.25} />}
         </button>
       </div>
 
@@ -77,7 +77,7 @@ export function Navbar() {
       {open ? (
         <div
           id="mobile-nav"
-          className="border-t border-border bg-background px-4 py-4 lg:hidden"
+          className="border-t border-border bg-background px-4 py-3 lg:hidden"
         >
           <div className="flex flex-col gap-4">
             {links.map((l) => (

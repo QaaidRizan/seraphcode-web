@@ -1,11 +1,16 @@
+import { HeroBackgroundVideo } from "@/components/home/HeroBackgroundVideo";
 import { Button } from "@/components/shared/Button";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 
 export function HeroSection() {
   return (
     <section className="home-hero relative -mb-6 overflow-hidden border-b border-border cyber-grid-bg z-10">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_18%,rgba(0,245,212,0.14),transparent_55%),radial-gradient(ellipse_at_72%_58%,rgba(165,108,255,0.11),transparent_48%),radial-gradient(ellipse_at_50%_100%,rgba(111,231,255,0.07),transparent_55%)]" />
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <HeroBackgroundVideo />
+      <div
+        className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(to_bottom,rgba(0,0,0,0.92)_0%,rgba(0,0,0,0.78)_18%,rgba(0,0,0,0.52)_38%,rgba(0,0,0,0.22)_58%,transparent_82%),radial-gradient(ellipse_at_30%_18%,rgba(0,245,212,0.14),transparent_55%),radial-gradient(ellipse_at_72%_58%,rgba(165,108,255,0.11),transparent_48%),radial-gradient(ellipse_at_50%_100%,rgba(111,231,255,0.07),transparent_55%)]"
+        aria-hidden
+      />
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-8 md:gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
           <div>
             <SectionLabel text="Development · AI · Enterprise · Cloud" />
