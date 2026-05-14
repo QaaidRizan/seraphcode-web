@@ -1,14 +1,14 @@
 import { SiteLogo } from "@/components/layout/SiteLogo";
 
-const HEADER_LOGO_FILTER =
-  "[filter:brightness(0)_invert(1)_brightness(1.14)_contrast(1.08)_saturate(1.15)_drop-shadow(0_0_14px_rgba(0,245,212,0.52))]";
-
 type BrandLogoHomeLockupProps = {
   /** Set true in the sticky header for LCP */
   priority?: boolean;
 };
 
-/** Shared home logo: white lockup + teal wash + glow (navbar + footer). */
+/**
+ * Shared home logo (navbar + footer). White look comes from `public/svgs/sc_logo.svg`
+ * internal `feColorMatrix` filters — avoid stacking CSS `invert` on `<img>` (Safari blur).
+ */
 export function BrandLogoHomeLockup({ priority = false }: BrandLogoHomeLockupProps) {
   return (
     <span className="relative inline-flex h-14 shrink-0 items-center overflow-visible sm:h-16 md:h-[4.25rem]">
@@ -18,10 +18,7 @@ export function BrandLogoHomeLockup({ priority = false }: BrandLogoHomeLockupPro
       />
       <SiteLogo
         priority={priority}
-        className={[
-          "navbar-logo relative z-[1] h-full w-auto max-h-full max-w-[10.5rem] object-contain object-left sm:max-w-[12rem] md:max-w-[13rem]",
-          HEADER_LOGO_FILTER,
-        ].join(" ")}
+        className="navbar-logo relative z-[1] h-full w-auto max-h-full max-w-[10.5rem] object-contain object-left sm:max-w-[12rem] md:max-w-[13rem]"
       />
     </span>
   );
