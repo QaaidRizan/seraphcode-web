@@ -14,8 +14,8 @@ export function SiteLogo({
     <img
       src={LOGO_SRC}
       alt="SeraphCode"
-      width={140}
-      height={140}
+      width={375}
+      height={375}
       decoding={priority ? "sync" : "async"}
       fetchPriority={priority ? "high" : "auto"}
       className={className}
