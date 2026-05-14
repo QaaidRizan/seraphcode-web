@@ -36,19 +36,27 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="relative sticky top-0 z-50 overflow-visible border-b border-[color:var(--border-soft)] bg-[color:var(--surface-header)] backdrop-blur-md">
-      <div className="mx-auto flex h-14 max-h-14 w-full max-w-7xl items-center justify-between gap-3 overflow-hidden px-4 sm:h-16 sm:max-h-16 sm:px-6 lg:gap-4 lg:px-8">
+    <header className="relative sticky top-0 z-50 overflow-visible border-b border-border/80 bg-background/85 backdrop-blur-md">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="relative flex h-[34px] max-h-[34px] shrink-0 items-center overflow-hidden rounded-sm bg-white px-1.5 shadow-sm ring-1 ring-[rgba(0,0,0,0.08)] outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--surface-header)] md:h-10 md:max-h-10"
+          className="relative flex items-center gap-2 overflow-visible rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
-          <SiteLogo
-            priority
-            className="navbar-logo relative z-[1] h-full w-auto max-h-full max-w-[9rem] object-contain object-left sm:max-w-[10rem] md:max-w-[11rem]"
-          />
+          {/* Fixed layout height; scale enlarges only the drawn SVG without growing the bar much */}
+          <span className="relative inline-flex h-9 shrink-0 items-center overflow-visible">
+            <span
+              className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[4.5rem] w-[7.5rem] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(0,245,212,0.4)_0%,rgba(0,245,212,0.12)_48%,transparent_72%)] blur-md"
+              aria-hidden
+            />
+            {/* right-side logo glow removed */}
+            <SiteLogo
+              priority
+              className="navbar-logo relative z-[1] h-9 w-auto max-w-[10rem] origin-left scale-[1.85] object-contain object-left sm:max-w-[11rem] sm:scale-[2.08] [filter:brightness(0)_invert(1)_brightness(1.15)_contrast(1.1)_saturate(1.25)_drop-shadow(0_0_14px_rgba(0,245,212,0.5))] md:scale-[2.24]"
+            />
+          </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
           {links.map((l) => (
             <NavLink key={l.href} href={l.href} label={l.label} />
           ))}
@@ -56,12 +64,12 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-[color:var(--border-accent-faint)] bg-[rgba(0,245,212,0.06)] text-foreground transition-colors hover:bg-[rgba(0,245,212,0.12)] lg:hidden focus-cyber"
+          className="inline-flex min-h-11 min-w-11 items-center justify-center border border-border text-foreground lg:hidden focus-cyber"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? <X className="h-4 w-4" strokeWidth={2.25} /> : <Menu className="h-4 w-4" strokeWidth={2.25} />}
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
@@ -70,9 +78,9 @@ export function Navbar() {
       {open ? (
         <div
           id="mobile-nav"
-          className="border-t border-border bg-background px-4 py-3 lg:hidden"
+          className="border-t border-border bg-background px-4 py-4 lg:hidden"
         >
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-4">
             {links.map((l) => (
               <NavLink key={l.href} href={l.href} label={l.label} />
             ))}
