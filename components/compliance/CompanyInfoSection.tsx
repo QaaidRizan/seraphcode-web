@@ -19,7 +19,7 @@ export function CompanyInfoSection() {
             <tbody>
               {rows.map((r) => (
                 <tr key={r.label} className="border-b border-border last:border-0">
-                  <th className="w-1/3 bg-card/40 px-4 py-3 font-mono text-xs uppercase tracking-widest text-accent">
+                  <th className="w-1/3 bg-[color:var(--surface-card-40)] px-4 py-3 font-mono text-xs uppercase tracking-widest text-accent">
                     {r.label}
                   </th>
                   <td className="px-4 py-3 text-muted-foreground">{r.value}</td>

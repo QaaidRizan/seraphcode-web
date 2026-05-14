@@ -45,7 +45,7 @@ export function MobileDevSection() {
               {items.map((item) => (
                 <li
                   key={item.title}
-                  className="cyber-chamfer border border-border bg-card/50 p-4"
+                  className="cyber-chamfer border border-border bg-[color:var(--surface-card-50)] p-4"
                 >
                   <h3 className="font-heading text-sm font-semibold uppercase tracking-wide text-accent">
                     {item.title}

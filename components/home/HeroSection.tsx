@@ -45,7 +45,7 @@ export function HeroSection() {
                 className="holographic-panel__corner holographic-panel__corner--bl"
                 aria-hidden
               />
-              <div className="flex items-center justify-between border-b border-border/80 pb-3 font-mono text-[10px] uppercase tracking-[0.35em] text-accent-tertiary">
+              <div className="flex items-center justify-between border-b border-[color:var(--border-soft)] pb-3 font-mono text-[10px] uppercase tracking-[0.35em] text-accent-tertiary">
                 <span>HUD // STATUS</span>
                 <span className="text-accent drop-shadow-[0_0_12px_rgba(0,245,212,0.5)]">
                   ONLINE

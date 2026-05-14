@@ -15,7 +15,7 @@ export function EnterpriseSecuritySection() {
   return (
     <section className="relative border-b border-border py-20 md:py-24 cyber-grid-bg">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="cyber-chamfer overflow-hidden border border-border bg-card/40 p-6 shadow-[var(--box-shadow-neon-sm)] md:p-10">
+        <div className="cyber-chamfer overflow-hidden border border-border bg-[color:var(--surface-card-40)] p-6 shadow-[var(--box-shadow-neon-sm)] md:p-10">
           <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
               <SectionLabel text="ENTERPRISE SECURITY" />
@@ -33,7 +33,7 @@ export function EnterpriseSecuritySection() {
                 {securityPills.map((pill) => (
                   <span
                     key={pill}
-                    className="inline-flex items-center rounded-full border border-border bg-muted/50 px-3 py-1.5 font-mono text-xs uppercase tracking-[0.16em] text-accent-tertiary"
+                    className="inline-flex items-center rounded-full border border-border bg-[color:var(--surface-muted-50)] px-3 py-1.5 font-mono text-xs uppercase tracking-[0.16em] text-accent-tertiary"
                   >
                     {pill}
                   </span>
@@ -43,7 +43,7 @@ export function EnterpriseSecuritySection() {
 
             <div className="cyber-surface-deep cyber-chamfer border border-border p-8">
               <div className="mx-auto flex max-w-xs flex-col items-center text-center">
-                <div className="inline-flex h-20 w-20 items-center justify-center rounded-full border border-accent/60 bg-accent/10 text-accent shadow-[var(--box-shadow-neon)]">
+                <div className="inline-flex h-20 w-20 items-center justify-center rounded-full border border-[color:var(--border-accent-soft)] bg-[color:var(--surface-accent-10)] text-accent shadow-[var(--box-shadow-neon)]">
                   <LockKeyhole className="h-10 w-10" aria-hidden />
                 </div>
                 <p className="mt-5 font-heading text-xl font-bold uppercase tracking-wide text-foreground">

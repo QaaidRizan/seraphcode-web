@@ -53,7 +53,7 @@ export function AdditionalServicesSection() {
           {cards.map((c) => (
             <div
               key={c.title}
-              className="cyber-chamfer border border-border bg-card/60 p-5 transition-all hover:border-accent hover:shadow-[var(--box-shadow-neon-sm)]"
+              className="cyber-chamfer border border-border bg-[color:var(--surface-card-60)] p-5 transition-all hover:border-accent hover:shadow-[var(--box-shadow-neon-sm)]"
             >
               <h3 className="font-heading text-sm font-semibold uppercase tracking-wide text-foreground">
                 {c.title}

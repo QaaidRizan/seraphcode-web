@@ -36,7 +36,7 @@ export function ContactInfo() {
           {cards.map((c) => (
             <div
               key={c.label}
-              className="cyber-chamfer border border-border bg-card/50 p-5"
+              className="cyber-chamfer border border-border bg-[color:var(--surface-card-50)] p-5"
             >
               <div className="mb-3 inline-flex h-10 w-10 items-center justify-center border border-border text-accent">
                 <c.icon className="h-5 w-5" strokeWidth={1.5} />

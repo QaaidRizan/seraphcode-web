@@ -82,7 +82,7 @@ export function JobListSection() {
           {jobs.map((job) => (
             <article
               key={job.title}
-              className="cyber-chamfer border border-border bg-card/50 p-6 md:p-8"
+              className="cyber-chamfer border border-border bg-[color:var(--surface-card-50)] p-6 md:p-8"
             >
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div>

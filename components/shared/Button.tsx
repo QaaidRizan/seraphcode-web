@@ -14,7 +14,7 @@ const variants = {
   secondary:
     "border-2 border-accent-secondary bg-transparent text-accent-secondary hover:bg-accent-secondary hover:text-[var(--on-accent)] hover:shadow-[var(--box-shadow-neon-secondary)]",
   ghost:
-    "border-0 bg-transparent text-muted-foreground hover:bg-accent/10 hover:text-accent",
+    "border-0 bg-transparent text-muted-foreground hover:bg-[color:var(--surface-accent-10)] hover:text-accent",
   muted:
     "border border-border bg-transparent text-foreground hover:border-accent hover:text-accent hover:shadow-[var(--box-shadow-neon-sm)]",
 } as const;

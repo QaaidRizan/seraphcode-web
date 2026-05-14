@@ -101,10 +101,10 @@ export function Footer() {
               {SITE.phone}
             </a>
           </p>
-          <p className="mt-6 font-mono text-xs text-muted-foreground/90">
+          <p className="mt-6 font-mono text-xs text-[color:var(--text-muted-soft)]">
             ACN - {SITE.acn} | ABN - {SITE.abn}
           </p>
-          <p className="mt-1 font-mono text-xs text-muted-foreground/90">
+          <p className="mt-1 font-mono text-xs text-[color:var(--text-muted-soft)]">
             © {new Date().getFullYear()} SeraphCode. All rights reserved.
           </p>
         </div>

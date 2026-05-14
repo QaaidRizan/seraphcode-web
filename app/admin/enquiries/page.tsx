@@ -86,7 +86,7 @@ export default function AdminEnquiriesPage() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {enquiries.map((enquiry) => (
-              <div key={enquiry.id} className="border border-border bg-input p-6 cyber-chamfer-sm flex flex-col relative group hover:border-accent/50 transition-colors">
+              <div key={enquiry.id} className="border border-border bg-input p-6 cyber-chamfer-sm flex flex-col relative group hover:border-[color:var(--border-accent-hover)] transition-colors">
                 <div className="flex justify-between items-start mb-6">
                   <div>
                     <h2 className="font-bold text-xl text-foreground">{enquiry.name}</h2>
@@ -96,34 +96,34 @@ export default function AdminEnquiriesPage() {
                       </p>
                     )}
                   </div>
-                  <span className="bg-accent/10 border border-accent/20 text-accent px-2 py-1 text-xs font-mono tracking-widest uppercase rounded flex-shrink-0">
+                  <span className="bg-[color:var(--surface-accent-10)] border border-[color:var(--border-accent-faint)] text-accent px-2 py-1 text-xs font-mono tracking-widest uppercase rounded flex-shrink-0">
                     {enquiry.status}
                   </span>
                 </div>
                 
                 <div className="space-y-4 font-mono text-sm text-muted-foreground mb-8 flex-grow">
                   <div className="space-y-2">
-                    <p className="flex flex-col sm:flex-row sm:justify-between border-b border-border/50 pb-2">
+                    <p className="flex flex-col sm:flex-row sm:justify-between border-b border-[color:var(--border-faint)] pb-2">
                       <span className="text-accent text-xs uppercase tracking-wider mb-1 sm:mb-0">Email</span>
                       <a href={`mailto:${enquiry.email}`} className="text-foreground hover:text-accent transition-colors truncate pl-2">{enquiry.email}</a>
                     </p>
                     
                     {enquiry.company && (
-                      <p className="flex flex-col sm:flex-row sm:justify-between border-b border-border/50 pb-2">
+                      <p className="flex flex-col sm:flex-row sm:justify-between border-b border-[color:var(--border-faint)] pb-2">
                         <span className="text-accent text-xs uppercase tracking-wider mb-1 sm:mb-0">Company</span>
                         <span className="text-foreground pl-2">{enquiry.company}</span>
                       </p>
                     )}
                     
                     {enquiry.phone && (
-                      <p className="flex flex-col sm:flex-row sm:justify-between border-b border-border/50 pb-2">
+                      <p className="flex flex-col sm:flex-row sm:justify-between border-b border-[color:var(--border-faint)] pb-2">
                         <span className="text-accent text-xs uppercase tracking-wider mb-1 sm:mb-0">Phone</span>
                         <a href={`tel:${enquiry.phone}`} className="text-foreground hover:text-accent transition-colors pl-2">{enquiry.phone}</a>
                       </p>
                     )}
                     
                     {enquiry.service && (
-                      <p className="flex flex-col sm:flex-row sm:justify-between border-b border-border/50 pb-2">
+                      <p className="flex flex-col sm:flex-row sm:justify-between border-b border-[color:var(--border-faint)] pb-2">
                         <span className="text-accent text-xs uppercase tracking-wider mb-1 sm:mb-0">Service</span>
                         <span className="text-foreground pl-2">{enquiry.service}</span>
                       </p>
@@ -132,7 +132,7 @@ export default function AdminEnquiriesPage() {
                   
                   <div className="mt-6 pt-2">
                     <span className="text-accent text-xs uppercase tracking-wider block mb-3">Message</span>
-                    <p className="whitespace-pre-wrap text-foreground/90 bg-background/50 p-4 border border-border/50 text-sm leading-relaxed">
+                    <p className="whitespace-pre-wrap text-[color:var(--text-foreground-soft)] bg-[color:var(--surface-panel)] p-4 border border-[color:var(--border-faint)] text-sm leading-relaxed">
                       {enquiry.message}
                     </p>
                   </div>

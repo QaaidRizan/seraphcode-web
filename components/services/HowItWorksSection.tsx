@@ -42,9 +42,9 @@ export function HowItWorksSection() {
           {steps.map((s) => (
             <div
               key={s.n}
-              className="cyber-chamfer relative border border-border bg-card/40 p-6"
+              className="cyber-chamfer relative border border-border bg-[color:var(--surface-card-40)] p-6"
             >
-              <span className="font-heading text-3xl font-black text-accent/80">
+              <span className="font-heading text-3xl font-black text-[color:var(--text-accent-soft)]">
                 {s.n}
               </span>
               <h3 className="font-heading mt-3 text-sm font-semibold uppercase tracking-wide text-foreground">

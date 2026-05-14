@@ -22,6 +22,31 @@
     0 0 40px #00f5d430;
   --box-shadow-neon-secondary: 0 0 5px #a56cff, 0 0 20px #a56cff60;
   --box-shadow-neon-tertiary: 0 0 5px #6fe7ff, 0 0 20px #6fe7ff60;
+
+  /*
+   * Explicit sRGB overlays: Tailwind opacity modifiers (e.g. bg-background/85) compile to
+   * color-mix(in oklab, …) which Samsung Internet often renders flatter/duller than Chrome.
+   */
+  --surface-header: rgba(10, 15, 20, 0.92);
+  --surface-subnav: rgba(10, 15, 20, 0.94);
+  --surface-card-40: rgba(0, 0, 0, 0.4);
+  --surface-card-50: rgba(0, 0, 0, 0.5);
+  --surface-card-60: rgba(0, 0, 0, 0.6);
+  --surface-muted-30: rgba(26, 26, 26, 0.45);
+  --surface-muted-40: rgba(26, 26, 26, 0.58);
+  --surface-muted-50: rgba(26, 26, 26, 0.68);
+  --surface-accent-10: rgba(0, 245, 212, 0.12);
+  --border-soft: rgba(22, 48, 64, 0.78);
+  --text-muted-soft: rgba(209, 213, 219, 0.9);
+  --hero-fade-from: rgba(10, 15, 20, 0.78);
+  --text-accent-soft: rgba(0, 245, 212, 0.88);
+  --border-accent-soft: rgba(0, 245, 212, 0.55);
+  --dot-accent-strong: rgba(0, 245, 212, 0.92);
+  --border-faint: rgba(22, 48, 64, 0.5);
+  --border-accent-faint: rgba(0, 245, 212, 0.25);
+  --border-accent-hover: rgba(0, 245, 212, 0.5);
+  --surface-panel: rgba(10, 15, 20, 0.55);
+  --text-foreground-soft: rgba(255, 255, 255, 0.9);
 }
 
 @theme inline {
@@ -46,6 +71,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    color-scheme: dark;
   }
 
   body {
@@ -82,7 +108,7 @@
   }
 
   ::selection {
-    background: color-mix(in oklab, var(--accent) 38%, transparent);
+    background: color-mix(in srgb, var(--accent) 38%, transparent);
     color: var(--foreground);
   }
 
@@ -136,11 +162,11 @@ body::after {
 }
 
 .cyber-surface-raised {
-  background: color-mix(in oklab, var(--card) 42%, var(--background));
+  background: color-mix(in srgb, var(--card) 42%, var(--background));
 }
 
 .cyber-surface-deep {
-  background: color-mix(in oklab, var(--muted) 22%, var(--background));
+  background: color-mix(in srgb, var(--muted) 22%, var(--background));
 }
 
 .cyber-grid-bg {
@@ -287,8 +313,8 @@ body::after {
 
 .holographic-panel {
   position: relative;
-  background: color-mix(in oklab, var(--glass) 45%, transparent);
-  border: 1px solid color-mix(in oklab, var(--border) 85%, var(--accent) 15%);
+  background: color-mix(in srgb, var(--glass) 45%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 85%, var(--accent) 15%);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   box-shadow: var(--box-shadow-neon-lg);
@@ -300,7 +326,7 @@ body::after {
   width: 14px;
   height: 14px;
   pointer-events: none;
-  border-color: color-mix(in oklab, var(--accent-tertiary) 55%, transparent);
+  border-color: color-mix(in srgb, var(--accent-tertiary) 55%, transparent);
   border-style: solid;
 }
 

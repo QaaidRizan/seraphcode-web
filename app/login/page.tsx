@@ -16,7 +16,7 @@ export default function LoginPage() {
         This area is reserved for SeraphCode team members. Authentication will be
         connected here (for example via your identity provider).
       </p>
-      <div className="cyber-chamfer mt-8 border border-dashed border-border bg-card/40 p-8 text-center text-sm text-muted-foreground">
+      <div className="cyber-chamfer mt-8 border border-dashed border-border bg-[color:var(--surface-card-40)] p-8 text-center text-sm text-muted-foreground">
         Placeholder — no sign-in configured in this build.
       </div>
     </div>

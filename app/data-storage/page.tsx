@@ -68,7 +68,7 @@ export default function DataStoragePage() {
           {frameworkRows.map((row) => (
             <div
               key={row.title}
-              className="cyber-chamfer border border-border bg-card/40 p-5"
+              className="cyber-chamfer border border-border bg-[color:var(--surface-card-40)] p-5"
             >
               <h3 className="font-heading text-sm font-semibold uppercase tracking-wide text-accent">
                 {row.title}

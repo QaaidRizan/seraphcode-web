@@ -30,7 +30,7 @@ export function WhyUsSection() {
               height={700}
               className="h-full w-full object-cover opacity-90"
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-background/80 via-transparent to-transparent" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-[color:var(--hero-fade-from)] via-transparent to-transparent" />
           </div>
           <div className="order-1 grid gap-6 sm:grid-cols-2 lg:order-2">
             <FeatureCard

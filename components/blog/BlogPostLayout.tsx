@@ -12,7 +12,7 @@ export function BlogPostLayout({ post }: { post: BlogPost }) {
       >
         ← Back to Blog
       </Link>
-      <div className="mt-6 inline-flex border border-border bg-muted/30 px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-accent">
+      <div className="mt-6 inline-flex border border-border bg-[color:var(--surface-muted-30)] px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-accent">
         {post.category}
       </div>
       <h1 className="font-heading mt-4 text-3xl font-black uppercase tracking-wide text-foreground md:text-4xl">

@@ -36,8 +36,8 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="relative sticky top-0 z-50 overflow-visible border-b border-border/80 bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+    <header className="relative sticky top-0 z-50 overflow-visible border-b border-[color:var(--border-soft)] bg-[color:var(--surface-header)] backdrop-blur-md">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
         <Link
           href="/"
           className="relative flex items-center gap-2 overflow-visible rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"

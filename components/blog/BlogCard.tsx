@@ -7,7 +7,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
       href={`/blog/${post.slug}`}
       className="group block h-full"
     >
-      <article className="cyber-chamfer cyber-interactive-card flex h-full flex-col border border-border bg-card/50 p-6 hover:-translate-y-px hover:border-accent hover:shadow-[var(--box-shadow-neon-sm)]">
+      <article className="cyber-chamfer cyber-interactive-card flex h-full flex-col border border-border bg-[color:var(--surface-card-50)] p-6 hover:-translate-y-px hover:border-accent hover:shadow-[var(--box-shadow-neon-sm)]">
         <div className="flex flex-wrap items-center gap-2 text-[11px] font-mono uppercase tracking-widest text-muted-foreground">
           <span className="text-accent">{post.category}</span>
           <span aria-hidden>·</span>

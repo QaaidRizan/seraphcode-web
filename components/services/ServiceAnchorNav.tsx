@@ -13,7 +13,7 @@ const items = [
 
 export function ServiceAnchorNav() {
   return (
-    <div className="sticky top-[57px] z-40 border-b border-border bg-background/90 backdrop-blur-md">
+    <div className="sticky top-[57px] z-40 border-b border-border bg-[color:var(--surface-subnav)] backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-4 py-3 sm:px-6 lg:px-8">
         {items.map((i) => (
           <Link
