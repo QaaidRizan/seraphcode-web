@@ -40,17 +40,10 @@ export function Footer() {
           <div>
             <Link
               href="/"
-              className="relative inline-block overflow-visible rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="relative inline-block overflow-hidden rounded-sm bg-white px-2 py-1.5 shadow-sm ring-1 ring-[rgba(0,0,0,0.08)] outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              {/* Same as header: no CSS scale — crisp on Safari / mobile Retina */}
-              <span className="relative inline-flex h-[calc(2.5rem*1.68)] items-center overflow-visible sm:h-[calc(2.75rem*1.86)] md:h-[calc(2.75rem*2.05)]">
-                <span
-                  className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[6.5rem] w-[13rem] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(0,245,212,0.32)_0%,rgba(0,245,212,0.08)_45%,transparent_72%)] blur-lg"
-                  aria-hidden
-                />
-                <SiteLogo
-                  className="navbar-logo relative z-[1] h-[calc(2.5rem*1.68)] w-auto max-w-[11rem] object-contain object-left [filter:brightness(0)_invert(1)_brightness(1.15)_contrast(1.1)_saturate(1.25)_drop-shadow(0_0_16px_rgba(0,245,212,0.45))] [translate:0_0_1px] sm:h-[calc(2.75rem*1.86)] sm:max-w-[12rem] md:h-[calc(2.75rem*2.05)]"
-                />
+              <span className="relative inline-flex h-[calc(2.5rem*1.68)] items-center sm:h-[calc(2.75rem*1.86)] md:h-[calc(2.75rem*2.05)]">
+                <SiteLogo className="navbar-logo relative z-[1] h-full max-h-full w-auto max-w-[11rem] object-contain object-left sm:max-w-[12rem] md:max-w-[13rem]" />
               </span>
             </Link>
             <p className="mt-4 max-w-md text-sm leading-relaxed tracking-wide text-muted-foreground">

@@ -1,5 +1,5 @@
-/** Served from `public/assets/sc_logo.svg` — use <img> so filters / embedded raster work; Next/Image often breaks these. */
-const LOGO_SRC = "/assets/sc_logo.svg";
+/** Static URL `public/svgs/sc_logo.svg`. `<img>` keeps filters / embedded raster reliable vs Next/Image. */
+const LOGO_SRC = "/svgs/sc_logo.svg";
 
 export function SiteLogo({
   className = "",
@@ -18,7 +18,7 @@ export function SiteLogo({
       height={375}
       decoding={priority ? "sync" : "async"}
       fetchPriority={priority ? "high" : "auto"}
-      className={className}
+      className={["block", className].filter(Boolean).join(" ")}
     />
   );
 }
